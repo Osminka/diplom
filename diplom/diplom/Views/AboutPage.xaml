@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diplom.Views.AboutPage"
+             xmlns:vm="clr-namespace:diplom.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#F0F0F0</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Example Item"
+                 IconImageSource="example_icon.png"
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>-->
+
+    <Grid  BackgroundColor="{StaticResource Accent}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--<StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                </ContentView>
+            </StackLayout>
+        </StackLayout>-->
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+        <Image Source="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Iмя:" TextColor="DarkRed" FontSize="Large"/>
+                <Label Text="Osminka" FontSize="Medium" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Пошта:" TextColor="DarkRed" FontSize="Large"/>
+                <Label Text="osminkalera2004@gmail.com" FontSize="Medium" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Пароль:" TextColor="DarkRed" FontSize="Large" />
+                <Label Text="•••••" FontSize="Medium" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Image Source="Без названия.jpg" VerticalOptions="Center" HeightRequest="64" />
+                <Button Text="Змяніць пароль" Clicked="Button_Clicked" BackgroundColor="DarkRed"/>
+                <Button Text="Выйсці" Clicked="Button_Clicked_1" BackgroundColor="DarkRed"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

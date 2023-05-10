@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:diplom="clr-namespace:diplom"
+             x:Class="App1.Views.RegistrPage"
+             Title="Registr">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Text">black</Color>
+            <Color x:Key="Button">#bf3f3d</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F0F0F0" >
+            <StackLayout Spacing="6" Padding="15" Margin="25,10,25,0">
+                <Label Text="Імя"  TextColor="{StaticResource Text}"  FontSize="Medium" />
+                <diplom:MyEntry x:Name="username" Placeholder="Enter your username"  BackgroundColor="White" FontSize="Medium"  TextColor="{StaticResource Text}"/>
+                <Label Text="Пошта" TextColor="{StaticResource Text}"  FontSize="Medium" />
+                <diplom:MyEntry x:Name="email" Placeholder="Enter your email"  BackgroundColor="White" FontSize="Medium"  TextColor="{StaticResource Text}"/>
+                <Label Text="Пароль"  TextColor="{StaticResource Text}"  FontSize="Medium" />
+                <diplom:MyEntry x:Name="password" Placeholder="Enter your password" BackgroundColor="White" FontSize="Medium" Keyboard="Chat" IsPassword="True"  TextColor="{StaticResource Text}"/>
+                <Label Text="Паўтарыце пароль"  TextColor="{StaticResource Text}"  FontSize="Medium" />
+                <diplom:MyEntry Placeholder="Confirm password" BackgroundColor="White" FontSize="Medium" IsPassword="True"  TextColor="{StaticResource Text}"/>
+                <StackLayout Orientation="Horizontal"  Margin="0,20,0,15" >
+                    <Button Text="Зарэгістравацца" WidthRequest="30" Clicked="Button_Clicked"  FontAttributes="Bold" VerticalOptions="Center"   CornerRadius="30" BackgroundColor="{StaticResource Button}" TextColor="FloralWhite" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <!--<Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>-->
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Ужо існуе акаўнт?" TextColor="{StaticResource Text}"  HorizontalOptions="Center"/>
+                    <Label x:Name="loginPage" Text="Увайсці"  FontAttributes="Bold" TextColor="{StaticResource Text}" HorizontalOptions="Center" TextDecorations="Underline"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    
+    
+    
+    
+    
+</ContentPage>

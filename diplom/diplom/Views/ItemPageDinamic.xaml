@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diplom.Views.ItemPageDinamic"
+             Shell.PresentationMode="ModalAnimated"
+             Title="{Binding Title}"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:local="clr-namespace:diplom.ViewModels"  
+             xmlns:model="clr-namespace:diplom.Models"  
+             ios:Page.UseSafeArea="true">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Update" Command="{Binding UpdateItemCommand}" />
+    </ContentPage.ToolbarItems>-->
+
+    <StackLayout Spacing="20" Padding="15">
+        <Label Text="Text:" FontSize="Medium" />
+        <Entry Text="{Binding Text}" FontSize="Small" IsEnabled="False"/>
+        <Label Text="Description:" FontSize="Medium" />
+        <ScrollView>
+            <Editor Text="{Binding Description}" FontSize="Small" IsEnabled="False"/>
+        </ScrollView>
+        <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diplom.Views.DictionaryPage"
+             xmlns:vm="clr-namespace:diplom.ViewModels"  
+             xmlns:model="clr-namespace:diplom.Models" xmlns:diplom="clr-namespace:diplom"
+             Title="Слоўнік">
+
+    <!--<ContentPage.BindingContext>
+        <vm:RulesViewModel />
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F0F0F0">
+            <Label Text="Увядзіце ваша слова:" TextColor="Black" FontSize="Medium" Margin="10,10,10,10" FontAttributes="Italic"/>
+            <diplom:MyEntry x:Name="WordEntry" FontSize="Medium" TextColor="Black" BackgroundColor="WhiteSmoke"/>
+            <Button Text="Пошук" Clicked="Button_Clicked" BackgroundColor="#bf3f3d"/>
+            <StackLayout Orientation="Horizontal" BackgroundColor="WhiteSmoke">
+                <RadioButton Content="рус-бел"  CheckedChanged="CheckBox_CheckedChanged_1" TextColor="black" />
+                <RadioButton Content="бел-рус" IsChecked="true" CheckedChanged="CheckBox_CheckedChanged_2" TextColor="black"/>
+                <RadioButton Content="тлумачальны" CheckedChanged="CheckBox_CheckedChanged_3" TextColor="black"/>
+            </StackLayout>
+            <ScrollView Orientation="Vertical">
+            <StackLayout x:Name="stackLayout" Margin="10,10,10,10">
+                <Label x:Name="resultLabel" Text="Беларуска-рускі слоўнік" FontSize="Medium" TextColor="#bf3f3d" FontAttributes="Bold"/>
+                <Label x:Name="textLabel" IsVisible="false" FontSize="Title" TextColor="#bf3f3d" FontAttributes="Bold"/>
+                    <Label x:Name="resultLabel2" FontSize="Body"  LineBreakMode="WordWrap" Text="Раздзел зроблены з акадэмічнага руска-беларускага слоўніка-трохтомніка. Складзены «аўтаматычна
+                       адваротным чынам», таму ёсць пэўныя недахопы, якія паступова выпраўляюцца. Атрымаўся, так бы мовіць, «слоўнік наадварот». Дарэчы, у некаторых артыкулах вы ўбачыце беларускія сінонімы. Карыстайцеся, хваліце, крытыкуйце. " TextColor="Black"/>
+            </StackLayout>
+            </ScrollView>
+            <!--<Label x:Name="resultLabel2" FontSize="Subtitle" FontAttributes="Italic"  TextColor="black" />-->
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
