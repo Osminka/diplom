@@ -34,7 +34,7 @@
             </StackLayout>
         </StackLayout>-->
         <StackLayout Orientation="Vertical" VerticalOptions="Center" >
-        <Image Source="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" />
+        <Image Source="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" Margin="40"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Iмя:" TextColor="DarkRed" FontSize="Large"/>
                 <Label Text="Osminka" FontSize="Medium" TextColor="Black" VerticalOptions="CenterAndExpand"/>
@@ -52,8 +52,7 @@
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
                 <Image Source="Без названия.jpg" VerticalOptions="Center" HeightRequest="64" />
-                <Button Text="Змяніць пароль" Clicked="Button_Clicked" BackgroundColor="DarkRed"/>
-                <Button Text="Выйсці" Clicked="Button_Clicked_1" BackgroundColor="DarkRed"/>
+               
             </StackLayout>
         </ScrollView>
     </Grid>

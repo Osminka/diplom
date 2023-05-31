@@ -12,7 +12,7 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <!--<ToolbarItem Text="Дадаць" Command="{Binding AddItemCommand}"  />-->
+        <ToolbarItem x:Name="toolbar1" Text="Дадаць" Command="{Binding AddItemCommand}"  />
         <!--<ToolbarItem Text="Выдаліць" Command="{Binding DeleteCommand}" />-->
         <!--<ToolbarItem Text="Update" Command="{Binding UpdateItemCommand}" />-->
     </ContentPage.ToolbarItems>
@@ -20,33 +20,26 @@
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
     -->
-    <RefreshView x:DataType="local:ItemsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-        <CollectionView x:Name="ItemsListView" BackgroundColor="#F0F0F0" 
+    
+    <RefreshView x:DataType="local:LitViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}"
                 SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Item2" Orientation="Horizontal" HorizontalOptions="Center">
-                        <StackLayout>
-                            <Image Source="https://resheba.top/_pu/2/99082271.png" WidthRequest="120" HeightRequest="150" BackgroundColor="#f0f0f0"/>
-                            <Label Text="Белорусская мова 6 клас" TextColor="Black"/>
-                        </StackLayout>
-                        <StackLayout >
-                            <Image Source="https://online.fliphtml5.com/fumf/imbb/files/large/1.jpg?1563461055" WidthRequest="120" HeightRequest="150" BackgroundColor="#f0f0f0"/>
-                            <Label Text="Беларуская літаратура 6 клас" TextColor="Black"/>
-                        </StackLayout>
-                        <StackLayout>
-                            <Image Source="https://chitatel.by/storage/thumbs/Eu/h1001_w1001_EuYui9qkgCADdzmZVpLw.jpg" WidthRequest="120" HeightRequest="150" BackgroundColor="#f0f0f0"/>
-                            <Label Text="Белорусская литература 10 класс" TextColor="Black"/>
-                        </StackLayout>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer 
+            <CollectionView.ItemTemplate >
+                <DataTemplate >
+                    <Frame BorderColor="#F0F0F0" BackgroundColor="#F0F0F0" Padding="0" Margin="0" HasShadow="False">
+                        <StackLayout Padding="10" x:DataType="model:ItemLit" BackgroundColor="#F0F0F0" >
+                            <ImageButton Source="{Binding ImageSource}" WidthRequest="175" HeightRequest="250" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="{Binding Name}" TextColor="Black" HorizontalOptions="CenterAndExpand" FontSize="16"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel2}}, Path=ItemTapped}"		
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:LitViewModel}}, Path=ItemTapped}"		
                                 CommandParameter="{Binding .}">
-                            </TapGestureRecognizer>
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
+                                </TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

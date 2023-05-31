@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diplom.Views.LitPageDinamic"
+             Title="{Binding Title}">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="toolbar1" Text="Прайсці тэст" Clicked="toolbar1_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+   
+    <StackLayout Spacing="20" Padding="15" BackgroundColor="WhiteSmoke">
+        <Label Text="Назва:" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
+        <ScrollView>
+        <Entry Text="{Binding Name}" FontSize="Medium" TextColor="Black"  />
+        </ScrollView>
+        <Label Text="Размяшчэнне кнігі:" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
+        <ScrollView>
+            <Editor Text="{Binding Source}" FontSize="Body" TextColor="Black"/>
+        </ScrollView>
+        <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
+        <ScrollView>
+            <Editor Text="{Binding ImageSource}" FontSize="Body" TextColor="Black"/>
+        </ScrollView>
+        
+        <Button Text="Абнавіць" Command="{Binding UpdateCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>
+        <Button Text="Выдаліць"  Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>
+    </StackLayout>
+
+
+</ContentPage>

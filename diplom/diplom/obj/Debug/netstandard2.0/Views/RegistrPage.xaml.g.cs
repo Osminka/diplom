@@ -17,24 +17,12 @@ namespace App1.Views {
     public partial class RegistrPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::diplom.MyEntry username;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::diplom.MyEntry email;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::diplom.MyEntry password;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label loginPage;
+        private global::Xamarin.Forms.Label registrPage;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(RegistrPage));
-            username = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::diplom.MyEntry>(this, "username");
-            email = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::diplom.MyEntry>(this, "email");
-            password = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::diplom.MyEntry>(this, "password");
-            loginPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "loginPage");
+            registrPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "registrPage");
         }
     }
 }

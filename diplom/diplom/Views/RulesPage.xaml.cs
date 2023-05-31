@@ -7,11 +7,21 @@ namespace diplom.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RulesPage : ContentPage
     {
-        ItemsViewModel _viewModel;
+        RulesViewModel _viewModel;
+        bool adminOrno = App.AdmOrNo;
         public RulesPage()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new ItemsViewModel();
+
+            BindingContext = _viewModel = new RulesViewModel();
+            if (adminOrno == true)
+            {
+                toolbar1.Text = "Дадаць";
+            }
+            else
+            {
+                toolbar1.Text = null;
+            }
         }
 
         protected override void OnAppearing()
@@ -19,6 +29,5 @@ namespace diplom.Views
             base.OnAppearing();
             _viewModel.OnAppearing();
         }
-
     }
 }

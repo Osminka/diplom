@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diplom.Views.LitDetailPage"
+             Title="{Binding Title}">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="toolbar1" Text="Зрабіць тэст" Command="{Binding AddItemCommand}"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <StackLayout Spacing="20" Padding="15" BackgroundColor="#F0F0F0">
+        <!--<Label Text="Тэкст:" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
+        <Entry Text="{Binding Text}" FontSize="Body" TextColor="Black"/>-->
+        <Label Text="{Binding Name}" FontSize="Medium" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+        <Image Source="{Binding ImageSource}" WidthRequest="150" HeightRequest="400"/>
+        <Button Text="Спампаваць" Command="{Binding DownloadCommand}" HorizontalOptions="Center" WidthRequest="260" FontSize="Small" BackgroundColor="#bf3f3d"  />
+        <!--<ScrollView>
+            <Editor Text="{Binding Description}" FontSize="Body" TextColor="Black"/>
+        </ScrollView>
+        <Button Text="Абнавіць" Command="{Binding UpdateCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>
+        <Button Text="Выдаліць"  Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>-->
+        <ActivityIndicator Color="Black"/>
+    </StackLayout>
+
+</ContentPage>

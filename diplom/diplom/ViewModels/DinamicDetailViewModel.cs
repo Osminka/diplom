@@ -16,6 +16,7 @@ namespace diplom.ViewModels
 
         public DinamicDetailViewModel()
         {
+            Title = "Размоўнікі";
             DeleteCommand = new Command(OnDelete);
             CancelCommand = new Command(OnCancel);
             UpdateCommand = new Command(OnUpdate);

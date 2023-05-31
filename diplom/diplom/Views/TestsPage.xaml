@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diplom.Views.TestsPage">
+    <ContentPage.Content >
+        <StackLayout  BackgroundColor="#f0f0f0" >
+            <StackLayout Margin="20,20,20,20">
+                <Image Source="https://www.pnp.ru/upload/entities/2021/10/29/17/article/detailPicture/f9/24/73/86/69f0a31f7ac8ba011e4e8ad59d957590.jpg" HorizontalOptions="Center" HeightRequest="250" WidthRequest="250"/>
+                <Label Text="НОЯБРЬ" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="Black"></Label>
+                <StackLayout Orientation="Vertical" BackgroundColor="WhiteSmoke" Margin="0,40" Spacing="10" >
+                    <RadioButton Content="Лістапад"   TextColor="black" FontSize="22" Margin="0,10,0,15" HeightRequest="60"  BackgroundColor="WhiteSmoke" BorderColor="Green" BorderWidth="2"/>
+                    <RadioButton Content="Кастрычнік" TextColor="black" FontSize="22" Margin="0,0,0,15"/>
+                    <RadioButton Content="Верасень"  TextColor="black" FontSize="22"/>
+                </StackLayout>
+                <Button Text="Далей" HorizontalOptions="CenterAndExpand" BackgroundColor="#bf3f3d" TextColor="White" WidthRequest="250" Clicked="Button_Clicked"/>
+            </StackLayout>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

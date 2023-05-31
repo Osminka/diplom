@@ -38,7 +38,7 @@ namespace diplom.Views
         {
             TapGestureRecognizer tapGesture = new TapGestureRecognizer
             {
-                NumberOfTapsRequired = 2
+                NumberOfTapsRequired = 1
             };
             tapGesture.Tapped += (s, e) =>
             {
@@ -56,7 +56,7 @@ namespace diplom.Views
         {
             TapGestureRecognizer tapGesture = new TapGestureRecognizer
             {
-                NumberOfTapsRequired = 2
+                NumberOfTapsRequired = 1
             };
             tapGesture.Tapped += (s, e) =>
             {

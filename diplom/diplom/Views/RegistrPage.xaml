@@ -12,26 +12,28 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#F0F0F0" >
-            <StackLayout Spacing="6" Padding="15" Margin="25,10,25,0">
-                <Label Text="Імя"  TextColor="{StaticResource Text}"  FontSize="Medium" />
-                <diplom:MyEntry x:Name="username" Placeholder="Enter your username"  BackgroundColor="White" FontSize="Medium"  TextColor="{StaticResource Text}"/>
-                <Label Text="Пошта" TextColor="{StaticResource Text}"  FontSize="Medium" />
-                <diplom:MyEntry x:Name="email" Placeholder="Enter your email"  BackgroundColor="White" FontSize="Medium"  TextColor="{StaticResource Text}"/>
-                <Label Text="Пароль"  TextColor="{StaticResource Text}"  FontSize="Medium" />
-                <diplom:MyEntry x:Name="password" Placeholder="Enter your password" BackgroundColor="White" FontSize="Medium" Keyboard="Chat" IsPassword="True"  TextColor="{StaticResource Text}"/>
-                <Label Text="Паўтарыце пароль"  TextColor="{StaticResource Text}"  FontSize="Medium" />
-                <diplom:MyEntry Placeholder="Confirm password" BackgroundColor="White" FontSize="Medium" IsPassword="True"  TextColor="{StaticResource Text}"/>
-                <StackLayout Orientation="Horizontal"  Margin="0,20,0,15" >
-                    <Button Text="Зарэгістравацца" WidthRequest="30" Clicked="Button_Clicked"  FontAttributes="Bold" VerticalOptions="Center"   CornerRadius="30" BackgroundColor="{StaticResource Button}" TextColor="FloralWhite" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                    <!--<Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>-->
+        <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Фоновое изображение -->
+            <Image BackgroundColor="#f0f0f0" Aspect="AspectFill" />
+
+                <!-- Ваш контент -->
+                <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <!-- Ваши элементы интерфейса -->
+                <Image Source="iconApp.png" WidthRequest="100" HeightRequest="100" Margin="0,200,0,0" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                <Label Text="МОВА" FontSize="30" FontAttributes="Bold" TextColor="LightGray" HorizontalOptions="Center" Margin="0,0,0,0"></Label>
+                <!--<Button Text="Пачаць вывучэнне" BackgroundColor="Transparent" CornerRadius="5" Margin="0,100,0,0" BorderColor="Black" BorderWidth="2" HorizontalOptions="Center" WidthRequest="200"></Button>-->
+                <Label x:Name="registrPage" Text="Я адміністратар"  FontSize="14"  Margin="0,345,0,250" TextColor="Gray" HorizontalOptions="Center" TextDecorations="Underline" ></Label>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Label Text="Ужо існуе акаўнт?" TextColor="{StaticResource Text}"  HorizontalOptions="Center"/>
-                    <Label x:Name="loginPage" Text="Увайсці"  FontAttributes="Bold" TextColor="{StaticResource Text}" HorizontalOptions="Center" TextDecorations="Underline"/>
-                </StackLayout>
-            </StackLayout>
-        </StackLayout>
+            </Grid>
+
     </ContentPage.Content>
     
     

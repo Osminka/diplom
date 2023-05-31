@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diplom.Views.ItemDetailRulePage"
+             Title="{Binding Title}">
+
+    <StackLayout Spacing="20" Padding="15" BackgroundColor="WhiteSmoke">
+        <Entry Text="{Binding Name}" FontSize="Medium" TextColor="Black" FontAttributes="Bold" />
+        <Label Text="Апісанне:" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
+        <ScrollView>
+            <Editor Text="{Binding Text}" FontSize="Body" TextColor="Black"/>
+        </ScrollView>
+        <Button Text="Абнавіць" Command="{Binding UpdateCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>
+        <Button Text="Выдаліць"  Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>
+    </StackLayout>
+
+</ContentPage>

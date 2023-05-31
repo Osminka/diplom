@@ -2,27 +2,102 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="diplom.Views.ItemDetailPage"
-             Shell.PresentationMode="ModalAnimated"
-             Title="{Binding Title}"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:local="clr-namespace:diplom.ViewModels"  
-             xmlns:model="clr-namespace:diplom.Models"  
-             ios:Page.UseSafeArea="true">
+             Title="{Binding Title}">
 
     <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Update" Command="{Binding UpdateItemCommand}" />
+        <ToolbarItem x:Name="toolbar1" Text="Зрабіць тэст" Command="{Binding AddItemCommand}"/>
     </ContentPage.ToolbarItems>-->
-
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Entry Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
+    <ScrollView>
+        <StackLayout BackgroundColor="#F0F0F0" Padding="15">
+    <StackLayout Spacing="20"  BackgroundColor="#F0F0F0">
+        <Label Text="Тэкст:" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
+        <Entry Text="{Binding Text}" FontSize="Body" TextColor="Black"/>
+        <Label Text="Апісанне:" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
         <ScrollView>
-        <Editor Text="{Binding Description}" FontSize="Small"/>
+            <Editor Text="{Binding Description}" FontSize="Body" TextColor="Black"/>
         </ScrollView>
-        <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-        <Button Text="Абнавіць" Command="{Binding UpdateCommand}" HorizontalOptions="FillAndExpand" FontSize="Small"/>
-        <Button Text="Удалить"  Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" FontSize="Small"/>
+        <!--<Button Text="Абнавіць" Command="{Binding UpdateCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>
+        <Button Text="Выдаліць"  Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>-->
     </StackLayout>
+            <StackLayout Margin="0,0,0,10"  BackgroundColor="#f0f0f0">
+                <Label Text="Тэст:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Пытанне №1:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Words}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+                <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Translations}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+                <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding VariantCorrect}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Variant1}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Variant2}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Image}" AutoSize="TextChanges" FontSize="Medium" />
+            </StackLayout>
+            <StackLayout Margin="0,0,0,10" BackgroundColor="#f0f0f0">
+                <Label Text="Пытанне №2:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Words}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+                <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Translations}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+                <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding VariantCorrect}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Variant1}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Variant2}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Image}" AutoSize="TextChanges" FontSize="Medium" />
+            </StackLayout>
+            <StackLayout Margin="0,0,0,10" BackgroundColor="#f0f0f0">
+                <Label Text="Пытанне №3:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Words}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+                <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Translations}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+                <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding VariantCorrect}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Variant1}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Variant2}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Image}" AutoSize="TextChanges" FontSize="Medium" />
+            </StackLayout>
 
+            <StackLayout Margin="0,0,0,10" BackgroundColor="#f0f0f0">
+            <Label Text="Пытанне №4:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+            <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+            <Editor Text="{Binding Words}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+            <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+            <Editor Text="{Binding Translations}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+            <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+            <Editor Text="{Binding VariantCorrect}" AutoSize="TextChanges" FontSize="Medium" />
+            <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+            <Editor Text="{Binding Variant1}" AutoSize="TextChanges" FontSize="Medium" />
+            <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+            <Editor Text="{Binding Variant2}" AutoSize="TextChanges" FontSize="Medium" />
+            <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+            <Editor Text="{Binding Image}" AutoSize="TextChanges" FontSize="Medium" />
+        </StackLayout>
+            <StackLayout Margin="0,0,0,10" BackgroundColor="#f0f0f0">
+                <Label Text="Пытанне №5:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Words}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+                <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Translations}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+                <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding VariantCorrect}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Variant1}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Variant2}" AutoSize="TextChanges" FontSize="Medium" />
+                <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Image}" AutoSize="TextChanges" FontSize="Medium" />
+            </StackLayout>
+            <Button Text="Абнавіць" Command="{Binding UpdateCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>
+            <Button Text="Выдаліць"  Command="{Binding DeleteCommand}" HorizontalOptions="FillAndExpand" FontSize="Small" BackgroundColor="#bf3f3d"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

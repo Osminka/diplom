@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diplom.Views.RuleItemPageDinamic"
+             Title="{Binding Title}">
+
+    <!--<ScrollView>
+        <StackLayout Spacing="20" Padding="15" BackgroundColor="WhiteSmoke">
+            --><!--<Label Text="Text:" FontSize="Medium" TextColor="Black" />--><!--
+            <Entry Text="{Binding Text}" IsEnabled="False"  FontSize="Large"  HorizontalOptions="Center" FontAttributes="Bold"/>
+            --><!--<Label Text="Description:" FontSize="Medium" TextColor="Black"/>--><!--
+            <Editor Text="{Binding Description}" FontSize="18" IsEnabled="False" />
+            --><!--<Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>--><!--
+        </StackLayout>
+
+    </ScrollView>-->
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15" BackgroundColor="#f0f0f0">
+            <Label Text="{Binding Name}" FontSize="20"  HorizontalOptions="Center" FontAttributes="Bold" TextColor="black"/>
+            <Label Text="{Binding Text}" FontSize="18" TextColor="black"/>
+    </StackLayout>
+    </ScrollView> 
+
+
+</ContentPage>

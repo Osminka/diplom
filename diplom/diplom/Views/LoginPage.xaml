@@ -19,15 +19,16 @@
   
 
     <ContentPage.Content >
-        <StackLayout BackgroundColor="#F0F0F0">
-            <StackLayout Spacing="6" Padding="15" Margin="25,10,25,0" BackgroundColor="#F0F0F0">
+        <StackLayout BackgroundColor="#F0F0F0" Margin="0,0,0,0">
+            <StackLayout Spacing="6" Padding="15" Margin="25,40,25,0" BackgroundColor="#F0F0F0" >
+                <Image Source="appIcon.png" HorizontalOptions="CenterAndExpand" HeightRequest="100" Margin="0,0,0,20"></Image>
                 <Label Text="Пошта"  TextColor="Black"  FontSize="Medium" />
-                <diplom:MyEntry x:Name="emailEntry"  Placeholder="Enter your email"  BackgroundColor="White" FontSize="Medium" TextColor="{StaticResource Text}"/>
+                <diplom:MyEntry x:Name="emailEntry"   BackgroundColor="White" FontSize="Medium" TextColor="{StaticResource Text}"/>
                 <Label Text="Пароль" TextColor="Black"  FontSize="Medium" />
-                <diplom:MyEntry x:Name="passEntry" Placeholder="Enter your password"  BackgroundColor="White" FontSize="Medium" IsPassword="True" TextColor="{StaticResource Text}"/>
-                <Label x:Name="forgotPass" Text="Забыліся пароль?" Margin="0,10,0,0" TextColor="Black"  FontAttributes="Bold" TextDecorations="Underline"/>
+                <diplom:MyEntry x:Name="passEntry"   BackgroundColor="White" FontSize="Medium" IsPassword="True" TextColor="{StaticResource Text}"/>
+                <!--<Label x:Name="forgotPass" Text="Забыліся пароль?" Margin="0,10,0,0" TextColor="Black"  FontAttributes="Bold" TextDecorations="Underline"/>-->
                 <StackLayout Orientation="Horizontal"  Margin="0,20,0,15" >
-                    <Button Text="Увайсці" WidthRequest="50"   FontAttributes="Bold" VerticalOptions="Center"  BorderWidth="30" CornerRadius="50" BackgroundColor="{StaticResource Button}" TextColor="FloralWhite" Clicked="Button_Clicked" Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="Увайсці"  HeightRequest="55" FontAttributes="Bold" VerticalOptions="Center"   CornerRadius="10" BackgroundColor="{StaticResource Button}" TextColor="FloralWhite" Clicked="Button_Clicked" Command="{Binding LoginCommand}" HorizontalOptions="FillAndExpand"></Button>
                     <!--<Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>-->
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="Center">

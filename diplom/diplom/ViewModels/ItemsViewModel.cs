@@ -92,21 +92,20 @@ namespace diplom.ViewModels
 
         async void OnItemSelected(Item item)
         {
-            string name = "admin";
+            bool name = App.AdmOrNo;
             if (item == null)
                 return;
-            if (name == "admin")
+            if (name == true)
             {
                 await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
 
             }
             else
             {
+                //await Shell.Current.Navigation.PushAsync($"{nameof(ItemPageDinamic)}?{nameof(DinamicDetailViewModel.ItemId)}={item.Id}");
                 await Shell.Current.GoToAsync($"{nameof(ItemPageDinamic)}?{nameof(DinamicDetailViewModel.ItemId)}={item.Id}");
 
             }
-            // This will push the ItemDetailPage onto the navigation stack
-            //await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
         }
     }
 }

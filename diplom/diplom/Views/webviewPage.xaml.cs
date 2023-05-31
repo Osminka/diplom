@@ -1,4 +1,5 @@
-﻿using diplom.ViewModels;
+﻿using Android.Widget;
+using diplom.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,24 @@ namespace diplom.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class webviewPage : ContentPage
     {
+
         //WebView webView;
         //Entry urlEntry;
-        ItemsViewModel _viewModel;
+        LitViewModel _viewModel;
+        bool adminOrno = App.AdmOrNo;
         public webviewPage()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new ItemsViewModel();
+            BindingContext = _viewModel = new LitViewModel();
+
+            if (adminOrno == true)
+            {
+                toolbar1.Text = "Дадаць";
+            }
+            else
+            {
+                toolbar1.Text = null;
+            }
             //urlEntry = new Entry { HorizontalOptions = LayoutOptions.FillAndExpand };
 
             //StackLayout stack = new StackLayout
@@ -47,6 +59,13 @@ namespace diplom.Views
             //webView.Source = new UrlWebViewSource { Url = urlEntry.Text };
             // или так
             // webView.Source = urlEntry.Text;
+        }
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            
+            //var itemsViewModel = new LitViewModel();
+            //itemsViewModel.SelectedItem;
         }
     }
 }

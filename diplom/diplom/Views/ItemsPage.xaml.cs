@@ -15,12 +15,20 @@ namespace diplom.Views
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel _viewModel;
-
+        bool adminOrno = App.AdmOrNo;
         public ItemsPage()
         {
             InitializeComponent();
 
             BindingContext = _viewModel = new ItemsViewModel();
+            if(adminOrno == true)
+            {
+                toolbar1.Text = "Дадаць";
+            }
+            else
+            {
+                toolbar1.Text = null;
+            }
         }
 
         protected override void OnAppearing()

@@ -3,10 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <ApplicationIcon>iconApp.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="file.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="iconApp.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,11 +45,32 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Views\LitPageDinamic.xaml.cs">
+      <DependentUpon>LitPageDinamic.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LitDetailPage.xaml.cs">
+      <DependentUpon>LitDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ItemDetailRulePage.xaml.cs">
+      <DependentUpon>ItemDetailRulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewTestPage.xaml.cs">
+      <DependentUpon>NewTestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewLitPage.xaml.cs">
+      <DependentUpon>NewLitPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RuleItemPageDinamic.xaml.cs">
+      <DependentUpon>RuleItemPageDinamic.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewItemRulePage.xaml.cs">
+      <DependentUpon>NewItemRulePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resource.xaml">
@@ -64,8 +91,14 @@
     <EmbeddedResource Update="Views\RegistrPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ResultTestsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\RulesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TestsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\webviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -76,5 +109,9 @@
     <None Update="Views\RegistrPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\fg\" />
   </ItemGroup>
 </Project>

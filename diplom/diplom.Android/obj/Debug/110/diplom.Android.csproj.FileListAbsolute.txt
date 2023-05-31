@@ -1343,8 +1343,6 @@ D:\MyFile\diplom\diplom\diplom.Android\bin\Debug\com.companyname.diplom.aab
 D:\MyFile\diplom\diplom\diplom.Android\bin\Debug\com.companyname.diplom-Signed.aab
 D:\MyFile\diplom\diplom\diplom.Android\bin\Debug\com.companyname.diplom-Signed.apk
 D:\MyFile\diplom\diplom\diplom.Android\bin\Debug\com.companyname.diplom-Signed.apk.idsig
-D:\MyFile\diplom\diplom\diplom.Android\bin\Debug\diplom.dll
-D:\MyFile\diplom\diplom\diplom.Android\bin\Debug\diplom.pdb
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\build.props
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\adb.props
@@ -1398,8 +1396,6 @@ D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\uploadflags.txt
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\resolvedassemblies.hash
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\diplom.Android.dll
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\diplom.Android.pdb
-D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\diplom.dll
-D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\diplom.pdb
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\FormsViewGroup.dll
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\FormsViewGroup.pdb
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\Java.Interop.dll
@@ -2002,6 +1998,20 @@ D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\System.Text.
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\System.Text.Encoding.CodePages.pdb
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\Microsoft.CSharp.dll
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\Microsoft.CSharp.pdb
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\HtmlAgilityPack.dll
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\HtmlAgilityPack.pdb
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\pravila.png
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\razmoyniki.png
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\litaratura.png
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\sloynik.png
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\images.png
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\appicon.png
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\iconapp.ico
+D:\MyFile\diplom\diplom\diplom.Android\bin\Debug\diplom.dll
+D:\MyFile\diplom\diplom\diplom.Android\bin\Debug\diplom.pdb
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\diplom.dll
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\diplom.pdb
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\background.jpg
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\lp\56\jl\files.cache
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\lp\64\jl\files.cache
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\lp\70\jl\files.cache
@@ -2011,5 +2021,5 @@ D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\lp\86\jl\files.cache
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\lp\94\jl\files.cache
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\lp\100\jl\files.cache
 D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\lp\105\jl\files.cache
-D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\HtmlAgilityPack.dll
-D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\android\assets\HtmlAgilityPack.pdb
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\wallpaper.jpg
+D:\MyFile\diplom\diplom\diplom.Android\obj\Debug\110\res\drawable\background2.jpg

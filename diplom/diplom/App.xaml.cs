@@ -4,6 +4,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.IO;
+using App1.Views;
 
 namespace diplom
 {
@@ -19,17 +20,20 @@ namespace diplom
                 return db;
             }
         }
+        public static bool AdmOrNo = false; 
         public App()
         {
             InitializeComponent();
-
+            AdmOrNo = false;
             DependencyService.Register<MockDataStore>();
+            DependencyService.Register<MockDataStoreRules>();
+            DependencyService.Register<MockDataStoreLit>();
             //MainPage = new AppShell();
         }
 
         protected override void OnStart()
         {
-            MainPage = new LoginPage();
+            MainPage = new RegistrPage();
         }
 
         protected override void OnSleep()

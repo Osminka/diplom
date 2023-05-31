@@ -7,10 +7,112 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true">
 
-
+<ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="toolbar1" Text="Add" Command="{Binding AddItemCommand}"/>
+    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Spacing="3" Padding="15" >
+        <ScrollView>
+            <StackLayout Spacing="3" Padding="15" BackgroundColor="#f0f0f0">
+                <Label Text="Тэма:" FontSize="Medium" TextColor="Black"/>
+                <Entry Text="{Binding Name, Mode=TwoWay}" FontSize="Medium" Placeholder="Калі ласка, увядзіце тэму"/>
+                <Label Text="Тэкст:" FontSize="Medium" TextColor="Black"/>
+                <Editor Text="{Binding Text, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium"  Placeholder="Калі ласка, увядзіце тэкст" Margin="0,0,0,10"/>
+                <!--<StackLayout Orientation="Horizontal" Margin="0,10">
+                    <Button Text="Назад" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#bf3f3d"></Button>
+                    <Button x:Name="butt" Text="Дадаць" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#bf3f3d" ></Button>
+                </StackLayout>-->
+               
+            
+            <StackLayout Spacing="3"  BackgroundColor="#f0f0f0">
+                    <StackLayout Margin="0,0,0,10" BackgroundColor="#f0f0f0">
+                        <Label Text="Тэст:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="Пытанне №1:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Words, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+                        <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Translations, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+                        <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding VariantCorrect, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant1, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant2, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Image, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                    </StackLayout>
+
+                    <StackLayout Margin="0,0,0,10" BackgroundColor="##f0f0f0">
+                        <Label Text="Пытанне №2:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Words, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+                        <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Translations, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+                        <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding VariantCorrect, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant1, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant2, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Image, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                    </StackLayout>
+                    <StackLayout Margin="0,0,0,10" BackgroundColor="#f0f0f0">
+                        <Label Text="Пытанне №3:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Words, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+                        <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Translations, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+                        <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding VariantCorrect, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant1, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant2, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Image, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                    </StackLayout>
+                    <StackLayout Margin="0,0,0,10" BackgroundColor="#f0f0f0">
+                        <Label Text="Пытанне №4:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Words, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+                        <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Translations, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+                        <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding VariantCorrect, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant1, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant2, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Image, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                    </StackLayout>
+                    <StackLayout Margin="0,0,0,10" BackgroundColor="#f0f0f0">
+                        <Label Text="Пытанне №5:" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="Словы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Words, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце cлова так, каб кожнае было на новым радку."/>
+                        <Label Text="Пераклады:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Translations, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Placeholder="Увядзіце пераклад так, каб кожнае слова было на новым радку."/>
+                        <Label Text="Правільны варыянт:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding VariantCorrect, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №1:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant1, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Варыянт №2:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Variant2, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                        <Label Text="Размяшчэнне выявы:" FontSize="Medium" TextColor="Black"/>
+                        <Editor Text="{Binding Image, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" />
+                    </StackLayout>
+                   
+                    <StackLayout Orientation="Horizontal" Margin="0,10">
+                        <Button Text="Назад" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#bf3f3d"></Button>
+                        <Button x:Name="butt6" Text="Дадаць" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#bf3f3d" ></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    <!--<ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
             <Label Text="Text" FontSize="Medium" />
             <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
             <Label Text="Description" FontSize="Medium" />
@@ -20,6 +122,6 @@
                 <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
             </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 
 </ContentPage>

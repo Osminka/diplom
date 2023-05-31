@@ -10,7 +10,7 @@ namespace diplom.ViewModels
 {
     public class BaseViewModel2 : INotifyPropertyChanged
     {
-        public IDataStore<Item2> DataStore => DependencyService.Get<IDataStore<Item2>>();
+        public IDataStore2<Item2> DataStore2 => DependencyService.Get<IDataStore2<Item2>>();
 
         bool isBusy = false;
         public bool IsBusy

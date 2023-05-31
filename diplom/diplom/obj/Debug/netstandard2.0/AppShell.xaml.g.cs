@@ -17,8 +17,24 @@ namespace diplom {
     public partial class AppShell : global::Xamarin.Forms.Shell {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ShellContent razm;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ShellContent prav;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ShellContent sloy;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ShellContent litar;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AppShell));
+            razm = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ShellContent>(this, "razm");
+            prav = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ShellContent>(this, "prav");
+            sloy = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ShellContent>(this, "sloy");
+            litar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ShellContent>(this, "litar");
         }
     }
 }

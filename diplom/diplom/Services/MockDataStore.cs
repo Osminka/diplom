@@ -8,6 +8,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Android.Content.Res;
 using System.Diagnostics;
+using System.Linq.Expressions;
+using MySqlConnector;
 
 namespace diplom.Services
 {
@@ -19,117 +21,155 @@ namespace diplom.Services
         {
             try
             {
-                bool newTop;
-                Root root1;
-                var json = string.Empty;
+                var conn = new MySqlConnection(Properties.Resources.db_mobile);
+                conn.Open();
+                var command = new MySqlCommand(@"SELECT * FROM Words", conn);
 
-                var context = Android.App.Application.Context;
-                AssetManager assets = context.Assets;
-                var assembly = typeof(App).GetTypeInfo().Assembly;
-                using (var reader = new System.IO.StreamReader(assets.Open("file.json")))
+                using (var reader = command.ExecuteReader())
                 {
-                    json = reader.ReadToEnd();
-                    root1 = JsonConvert.DeserializeObject<Root>(json);
-                }
-                for (int i = 0; i < root1.topics.Count; i++)
-                {
-                    var item = new Item { Id = Guid.NewGuid().ToString(), Text = root1.topics[i].topic, Description = root1.topics[i].entries.Aggregate("", (acc, entrie) => acc + $"{entrie.word} - {entrie.translation}\n") };
-                    items.Add(item);
+                    while (reader.Read())
+                    {
+                        // Чтение данных из текущей строки результата
+                        string topic = reader.GetString("Topic");
+                        string word = reader.GetString("Text");
+
+                        // Обработка полученных данных
+                        //Console.WriteLine($"topic: {topic}, word: {word}");
+                        var item = new Item { Id = Guid.NewGuid().ToString(), Text = topic, Description = word };
+                        items.Add(item);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
+                App.Current.MainPage.DisplayAlert("Внимание!", "Произошла ошибка, проверьте ваше подключение к интернету", "Ok");
+                Console.Out.WriteLineAsync("SQL_ERROR: " + ex.ToString() + "\n" + ex.StackTrace);
             }
         }
 
-        public class Entry
+        static MySqlDataReader Count;
+        static string Ok = "";
+        public static async void AddEntrie(string topic, string text)
         {
-            public string word { get; set; }
-            public string translation { get; set; }
-        }
-
-        public class Root
-        {
-            public List<Topic> topics { get; set; }
-        }
-
-        public class Topic
-        {
-            public string topic { get; set; }
-            public List<Entry> entries { get; set; }
-        }
-        public static async void AddEntrie()
-        {
-           // bool newTop;
-            Root root1;
-            using (StreamReader r = new StreamReader("file.json"))
+            try
             {
-                string json = File.ReadAllText("file.json");
-                root1 = JsonConvert.DeserializeObject<Root>(json);
-                //Console.WriteLine(JsonConvert.SerializeObject(root1, Formatting.Indented));
+                var conn = new MySqlConnection(Properties.Resources.db_mobile);
+                conn.Open();              
+                var command = new MySqlCommand(@"SELECT * FROM Words WHERE Topic=N'" + topic +"'", conn);
+
+                var count = command.ExecuteReader();
+                Count = count;
+                if (count.HasRows)
+                {
+                    App.Current.MainPage.DisplayAlert("Внимание!", "Такая тема уже есть", "Ok");
+                }
+                else
+                {
+                    count.Close();
+                    Ok = "ok";
+                    command = new MySqlCommand(@"INSERT INTO Words (Topic, Text) VALUES (N'" + topic + "', N'" + text + "')", conn);
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+                    App.Current.MainPage.DisplayAlert("Внимание!", "Запись добавлена", "Ok");
+                }
+
+            
             }
-            //string[] KeyValue = str.Split(" - ");
-            //bool isTopicExists = false;
-            //Entry entry = new Entry() { word = KeyValue[0], translation = KeyValue[1] };
-            //string newJson = "";
-            //foreach (Topic topic in root1.topics)
-            //{
-            //    if (topic.topic == thema)
-            //    {
-            //        topic.entries.Add(new Entry() { word = KeyValue[0], translation = KeyValue[1] });
-            //        isTopicExists = true;
-            //        break;
-            //    }
-            //}
-            //if (!isTopicExists)
-            //{
-            //    Topic topic1;
-            //    root1.topics.Add(topic1 = new Topic() { topic = thema, entries = new List<Entry>() { entry } });
-            //}
-            //string jsonString = JsonConvert.SerializeObject(root1, Formatting.Indented);
-            //File.WriteAllText("file.json", jsonString);
+            catch (Exception ex)
+            {
+                App.Current.MainPage.DisplayAlert("Внимание!", "Произошла ошибка, проверьте ваше подключение к интернету", "Ok");
+                Console.Out.WriteLineAsync("SQL_ERROR: " + ex.ToString() + "\n" + ex.StackTrace);
+                //await App.Current.MainPage.DisplayAlert("Внимание!", "Проверьте ваше подключение к интернету!", "Ok");
+            }
+
+        }
+        public static async void UpdateEntrie(string oldTopic, string topic, string text)
+        {
+            try
+            {
+                var conn = new MySqlConnection(Properties.Resources.db_mobile);
+                conn.Open();
+
+                var command = new MySqlCommand(@"UPDATE Words SET Text = @text, Topic = @newTopic WHERE Topic = @oldTopic", conn);
+                command.Parameters.AddWithValue("@text", text);
+                command.Parameters.AddWithValue("@newTopic", topic);
+                command.Parameters.AddWithValue("@oldTopic", oldTopic);
+                command.ExecuteNonQuery();
+
+                conn.Close();
+                Ok = "ok";
+                App.Current.MainPage.DisplayAlert("Внимание!", "Запись обновлена", "Ok");
+
+
+            }
+            catch (Exception ex)
+            {
+                App.Current.MainPage.DisplayAlert("Внимание!", "Произошла ошибка, проверьте ваше подключение к интернету", "Ok");
+                Console.Out.WriteLineAsync("SQL_ERROR: " + ex.ToString() + "\n" + ex.StackTrace);
+                //await App.Current.MainPage.DisplayAlert("Внимание!", "Проверьте ваше подключение к интернету!", "Ok");
+            }
+
+        }
+        public static async void DeleteEntrie(string topic)
+        {
+            try
+            {
+                var conn = new MySqlConnection(Properties.Resources.db_mobile);
+                conn.Open();
+
+                var command = new MySqlCommand(@"DELETE FROM Words WHERE Topic = @topic", conn);
+                command.Parameters.AddWithValue("@topic", topic);
+                command.ExecuteNonQuery();
+
+                conn.Close();
+                Ok = "ok";
+                App.Current.MainPage.DisplayAlert("Внимание!", "Запись удалена", "Ok");
+            }
+            catch (Exception ex)
+            {
+                App.Current.MainPage.DisplayAlert("Внимание!", "Произошла ошибка, проверьте ваше подключение к интернету", "Ok");
+                Console.Out.WriteLineAsync("SQL_ERROR: " + ex.ToString() + "\n" + ex.StackTrace);
+                //await App.Current.MainPage.DisplayAlert("Внимание!", "Проверьте ваше подключение к интернету!", "Ok");
+            }
 
         }
         public static string text;
-        //public static void ReadTextfile()
-        //{
-        //    using (StreamReader sr = new StreamReader("thema12.txt"))
-        //    {
-        //        string line;
-        //        while ((line = sr.ReadLine()) != null)
-        //        {
-        //            text = line;
-        //            string thema = "Маўленчыя няправільнасці";
-        //            AddEntrie(text, thema);
-        //            Console.WriteLine(line);
-        //        }
-        //    }
-
-        //}
         public async Task<bool> AddItemAsync(Item item)
         {
-            items.Add(item);
-
+            AddEntrie(item.Text, item.Description);
+            if (Ok == "ok")
+            {
+                items.Add(item);
+                Ok = "";
+            }
+                
             return await Task.FromResult(true);
         }
 
         public async Task<bool> UpdateItemAsync(Item item, string id)
         {
             var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            Console.WriteLine(oldItem); //не понимаю почему не находит oldItem, он пустой почему то, хотя индекс находит
-            items.Remove(oldItem);
-            items.Add(item);
-
+            UpdateEntrie(oldItem.Text, item.Text, item.Description);
+            if (Ok == "ok")
+            {
+                items.Remove(oldItem);
+                items.Add(item);
+                Ok = "";
+            }
             return await Task.FromResult(true);
         }
 
         public async Task<bool> DeleteItemAsync(string id)
         {
             var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
-
-
+            DeleteEntrie(oldItem.Text);
+           
+            if (Ok == "ok")
+            {
+                items.Remove(oldItem);
+                Ok = "";
+            }
             return await Task.FromResult(true);
         }
 

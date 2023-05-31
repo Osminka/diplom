@@ -16,6 +16,7 @@ namespace diplom.ViewModels
 
         public ItemDetailViewModel()
         {
+            Title = "Размоўнікі";
             DeleteCommand = new Command(OnDelete);
             CancelCommand = new Command(OnCancel);
             UpdateCommand = new Command(OnUpdate);
@@ -44,7 +45,6 @@ namespace diplom.ViewModels
         {
             var item = await DataStore.GetItemAsync(itemId);
             Id = item.Id;
-            Console.WriteLine(Id);
             await DataStore.DeleteItemAsync(Id);
 
             // This will pop the current page off the navigation stack
