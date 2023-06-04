@@ -21,15 +21,22 @@ namespace App1.Views
             InitializeComponent();
             this.BindingContext = new RegistrViewModel();
             ClickedLabel();
-             // Открывает OtherPage как модальную форму
-            Device.StartTimer(TimeSpan.FromSeconds(3), () =>
+            // Открывает OtherPage как модальную форму
+
+            //await Navigation.PushModalAsync(new OtherPage()); // Открывает OtherPage как модальную форму
+            Device.StartTimer(TimeSpan.FromSeconds(4), () =>
             {
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    Application.Current.MainPage = new AppShell();//await Navigation.PopModalAsync(); // Закрывает модальную форму OtherPage
+                    if (result != "true")
+                        Application.Current.MainPage = new AppShell(); // Закрывает модальную форму OtherPage
                 });
                 return false; // Останавливает таймер
             });
+            
+            //await Navigation.PopModalAsync(); // Закрывает модальную форму OtherPage
+                
+            
 
             // ClickedLabel();
 
@@ -47,9 +54,12 @@ namespace App1.Views
             registrPage.GestureRecognizers.Add(tapGesture);
 
         }
+        public string result = "";
         public async void Method()
         {
-            App.AdmOrNo = true;
+            result = "true";
+            await Navigation.PushModalAsync(new LoginPage());
+
         }
         //public void ClickedLabel()
         //{

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,16 @@ namespace diplom.Views
 		public ResultTestsPage ()
 		{
 			InitializeComponent ();
+			if(ItemPageDinamic.result<4) reslbl.TextColor = Color.Red;
+
+            reslbl.Text = ItemPageDinamic.result + "/6";
 		}
-	}
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            
+            Application.Current.MainPage = new AppShell();
+            
+        }
+    }
 }

@@ -12,6 +12,11 @@ namespace diplom.ViewModels
     {
         private string text;
         private string description;
+        private string wordRus;
+        private string varCorr;
+        private string var1;
+        private string var2;
+        private string imageSource;
 
         public NewItemViewModel()
         {
@@ -38,6 +43,32 @@ namespace diplom.ViewModels
             get => description;
             set => SetProperty(ref description, value);
         }
+        public string WordRus
+        {
+            get => wordRus;
+            set => SetProperty(ref wordRus, value);
+        }
+        public string VariantCorrect
+        {
+            get => varCorr;
+            set => SetProperty(ref varCorr, value);
+        }
+        public string Variant1
+        {
+            get => var1;
+            set => SetProperty(ref var2, value);
+        }
+        public string Variant2
+        {
+            get => var2;
+            set => SetProperty(ref var2, value);
+        }
+        public string ImageSource
+        {
+            get => imageSource;
+            set => SetProperty(ref imageSource, value);
+        }
+
 
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
@@ -54,7 +85,12 @@ namespace diplom.ViewModels
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,
-                Description = Description
+                Description = Description,
+                WordRus = WordRus,
+                VariantCorrect = VariantCorrect,
+                Variant1 = Variant1,
+                Variant2 = Variant2,
+                ImageSource = ImageSource,
             };
 
             await DataStore.AddItemAsync(newItem);

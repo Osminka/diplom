@@ -4,7 +4,7 @@
              x:Class="diplom.Views.ItemDetailRulePage"
              Title="{Binding Title}">
 
-    <StackLayout Spacing="20" Padding="15" BackgroundColor="WhiteSmoke">
+    <StackLayout Spacing="20" Padding="15" BackgroundColor="#f0f0f0">
         <Entry Text="{Binding Name}" FontSize="Medium" TextColor="Black" FontAttributes="Bold" />
         <Label Text="Апісанне:" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
         <ScrollView>

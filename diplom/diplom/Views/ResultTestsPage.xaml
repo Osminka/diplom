@@ -7,8 +7,8 @@
   
                     <Image Source="https://arthive.net/res/media/img/oy800/ref/224/280235@2x.jpg" HorizontalOptions="Center" HeightRequest="250" WidthRequest="250"/>
                     <Label Text="Правильных ответов:" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="Black" ></Label>
-            <Label Text="10/10" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="LightGreen" Margin="0,0,0,40"></Label>
-                    <Button Text="Выйсці" HorizontalOptions="CenterAndExpand" BackgroundColor="LightGreen" TextColor="White" WidthRequest="250" Margin="0,20,0,0"/>
+            <Label x:Name="reslbl"  HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="LightGreen" Margin="0,0,0,40"></Label>
+                    <Button Text="Выйсці" Clicked="Button_Clicked" HorizontalOptions="CenterAndExpand" BackgroundColor="LightGreen" TextColor="White" WidthRequest="250" Margin="0,20,0,0"/>
 
         </StackLayout>
     </ContentPage.Content>

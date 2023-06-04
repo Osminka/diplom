@@ -20,8 +20,8 @@ namespace diplom.Views
             InitializeComponent();
             this.BindingContext = new LoginViewModel();
             //SearchInLocalDb();
-            ClickedLabel();
-            ForgotPass();
+            //ClickedLabel();
+            //ForgotPass();
             //SearchInLocal
             //
             //
@@ -32,39 +32,40 @@ namespace diplom.Views
         }
         public async void Method()
         {
-            await Navigation.PushModalAsync(new RegistrPage());
+            await Navigation.PopModalAsync();
+            Application.Current.MainPage = new RegistrPage();
         }
-        public void ClickedLabel()
-        {
-            TapGestureRecognizer tapGesture = new TapGestureRecognizer
-            {
-                NumberOfTapsRequired = 1
-            };
-            tapGesture.Tapped += (s, e) =>
-            {
-                Method();
-            };
-            registrPage.GestureRecognizers.Add(tapGesture);
+        //public void ClickedLabel()
+        //{
+        //    TapGestureRecognizer tapGesture = new TapGestureRecognizer
+        //    {
+        //        NumberOfTapsRequired = 1
+        //    };
+        //    tapGesture.Tapped += (s, e) =>
+        //    {
+        //        Method();
+        //    };
+        //    registrPage.GestureRecognizers.Add(tapGesture);
 
-        }
+        //}
 
         //public async void Method2()
         //{
         //    //await Navigation.PushAsync(new RegistrPage());
         //}
-        public void ForgotPass()
-        {
-            TapGestureRecognizer tapGesture = new TapGestureRecognizer
-            {
-                NumberOfTapsRequired = 1
-            };
-            tapGesture.Tapped += (s, e) =>
-            {
-                //Method2();
-            };
-            registrPage.GestureRecognizers.Add(tapGesture);
+        //public void ForgotPass()
+        //{
+        //    TapGestureRecognizer tapGesture = new TapGestureRecognizer
+        //    {
+        //        NumberOfTapsRequired = 1
+        //    };
+        //    tapGesture.Tapped += (s, e) =>
+        //    {
+        //        //Method2();
+        //    };
+        //    registrPage.GestureRecognizers.Add(tapGesture);
 
-        }
+        //}
         public void CreateLocalDb()
         {
             Users users = new Users
@@ -93,7 +94,7 @@ namespace diplom.Views
 
             if (Email == "" || Pass == "")
             {
-                await App.Current.MainPage.DisplayAlert("Внимание!", "Заполните пустые поля!", "Ok");
+                await App.Current.MainPage.DisplayAlert("Увага!", "Запоўніце пустыя палі!", "Ok");
             }
             else
             {
@@ -106,25 +107,31 @@ namespace diplom.Views
                     var count = command.ExecuteReader();
                     if (count.Read())
                     {
-                        CreateLocalDb();
-                        await App.Current.MainPage.DisplayAlert("Внимание!", "Пойдет", "Ok");
+                        //CreateLocalDb();
+                        await App.Current.MainPage.DisplayAlert("Увага!", "Сардэчна запрашаем!", "Ok");
                         //await Navigation.PopModalAsync();
+                        App.AdmOrNo = true;
                         Application.Current.MainPage = new AppShell();
+
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert("Внимание!", "Неправильный email или пароль", "Ok");
+                        await App.Current.MainPage.DisplayAlert("Увага!", "Няправільная пошта ці пароль", "Ok");
                     }
                 }
                 catch (Exception ex)
                 {
                     await Console.Out.WriteLineAsync("SQL_ERROR: " + ex.ToString() + "\n" + ex.StackTrace);
-                    await App.Current.MainPage.DisplayAlert("Внимание!", "Проверьте ваше подключение к интернету!", "Ok");
+                    await App.Current.MainPage.DisplayAlert("Увага!", "Праверце ваша падлучэнне да інтэрнэту!", "Ok");
                 }
 
             }
 
         }
-    
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            Method();
+        }
     }
 }
