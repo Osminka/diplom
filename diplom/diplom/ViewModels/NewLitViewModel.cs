@@ -18,7 +18,7 @@ namespace diplom.ViewModels
 
         public NewLitViewModel()
         {
-            SaveCommand = new Command(OnSave);
+            SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
             this.PropertyChanged +=
                 (_, __) => SaveCommand.ChangeCanExecute();

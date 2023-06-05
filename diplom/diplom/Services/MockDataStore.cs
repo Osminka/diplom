@@ -75,7 +75,7 @@ namespace diplom.Services
                 {
                     count.Close();
                     Ok = "ok";
-                    string query = "INSERT INTO Words (Topic, Text, WordRus, VarCorr, Var1, Var2, ImageSource) VALUES (@Topic, @Text, @WordRus, @VarCorr, @Var1, @Var2, @ImageSource)";
+                    string query = "INSERT INTO Words (Topic, Text, WordRus, VariantCorrect, Variant1, Variant2, ImageSource) VALUES (@Topic, @Text, @WordRus, @VariantCorrect, @Variant1, @Variant2, @ImageSource)";
 
                     using (conn = new MySqlConnection(Properties.Resources.db_mobile))
                     {
@@ -86,9 +86,9 @@ namespace diplom.Services
                             command.Parameters.AddWithValue("@Topic", topic);
                             command.Parameters.AddWithValue("@Text", text);
                             command.Parameters.AddWithValue("@WordRus", wordRus);
-                            command.Parameters.AddWithValue("@VarCorr", varCorr);
-                            command.Parameters.AddWithValue("@Var1", var1);
-                            command.Parameters.AddWithValue("@Var2", var2);
+                            command.Parameters.AddWithValue("@VariantCorrect", varCorr);
+                            command.Parameters.AddWithValue("@Variant1", var1);
+                            command.Parameters.AddWithValue("@Variant2", var2);
                             command.Parameters.AddWithValue("@ImageSource", imageSource);
 
                             command.ExecuteNonQuery();

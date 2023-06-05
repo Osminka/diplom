@@ -83,6 +83,7 @@ namespace diplom.Views
 
                     // Переход на ту же страницу
                     Application.Current.MainPage.Navigation.PushAsync(currentPage);
+
                 }
                 else
                 {

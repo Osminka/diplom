@@ -16,10 +16,15 @@ namespace diplom.Views
 		public ResultTestsPage ()
 		{
 			InitializeComponent ();
-			if(ItemPageDinamic.result<4) reslbl.TextColor = Color.Red;
-
+            if (ItemPageDinamic.result < 4)
+            {
+                reslbl.TextColor = Color.Red;
+                butt.BackgroundColor = Color.Red;
+            }
             reslbl.Text = ItemPageDinamic.result + "/6";
-		}
+            ItemPageDinamic.result = 0;
+
+        }
 
         private void Button_Clicked(object sender, EventArgs e)
         {

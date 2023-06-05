@@ -16,12 +16,31 @@ namespace diplom.Views
         {
             InitializeComponent();
             BindingContext = new NewItemViewModel();
+            //if (butt6.IsEnabled == false)
+            //{
+            //    butt6.BackgroundColor = Color.FromHex("#bf3f3d");
+            //    butt6.TextColor = Color.White;
+            //}
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
             
 
+        }
+
+        private void butt6_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (butt6.IsEnabled == false)
+            {
+                butt6.BackgroundColor = Color.LightGray;
+                butt6.TextColor = Color.White;
+            }
+            if (butt6.IsEnabled == true)
+            {
+                butt6.BackgroundColor = Color.FromHex("#bf3f3d");
+                butt6.TextColor = Color.White;
+            }
         }
 
         //private void entry2_TextChanged(object sender, TextChangedEventArgs e)

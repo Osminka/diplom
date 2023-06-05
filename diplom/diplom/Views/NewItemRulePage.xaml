@@ -16,7 +16,7 @@
             <Editor Text="{Binding Text, Mode=TwoWay}" Placeholder="Калі ласка, увядзіце тэкст" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
             <StackLayout Orientation="Horizontal" Margin="0,10">
                 <Button Text="Назад" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#bf3f3d"></Button>
-                <Button Text="Дадаць" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#bf3f3d"></Button>
+                <Button x:Name="butt6" Text="Дадаць" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand" BackgroundColor="#bf3f3d" PropertyChanged="Button_PropertyChanged"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

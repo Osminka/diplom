@@ -20,7 +20,7 @@ namespace diplom.ViewModels
 
         public NewItemViewModel()
         {
-            SaveCommand = new Command(OnSave);
+            SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
             this.PropertyChanged +=
                 (_, __) => SaveCommand.ChangeCanExecute();
@@ -29,7 +29,12 @@ namespace diplom.ViewModels
         private bool ValidateSave()
         {
             return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+                && !String.IsNullOrWhiteSpace(description)
+                && !String.IsNullOrWhiteSpace(wordRus)
+                && !String.IsNullOrWhiteSpace(varCorr)
+                && !String.IsNullOrWhiteSpace(var1)
+                && !String.IsNullOrWhiteSpace(var2)
+                && !String.IsNullOrWhiteSpace(imageSource);
         }
 
         public string Text
@@ -56,7 +61,7 @@ namespace diplom.ViewModels
         public string Variant1
         {
             get => var1;
-            set => SetProperty(ref var2, value);
+            set => SetProperty(ref var1, value);
         }
         public string Variant2
         {
