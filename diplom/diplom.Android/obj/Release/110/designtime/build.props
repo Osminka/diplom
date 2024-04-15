@@ -25,11 +25,11 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=false
 androidpackagenamingpolicy=lowercasecrc64
-_nugetassetstimestamp=638210890436741868
+_nugetassetstimestamp=638487680693046757
 typemapkind=mvid
 androidsupportedabis=arm64-v8a
 armeabi-v7a
 x86
 x86_64
 androidmanifestplaceholders=
-projectfullpath=d:\myfile\diplom\diplom\diplom.android\diplom.android.csproj
+projectfullpath=c:\users\osmin\desktop\diplom\diplom\diplom.android\diplom.android.csproj

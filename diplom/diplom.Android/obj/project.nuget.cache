@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r42fCp19cB/HX7IZpljbjor5NnsPDKaa5eSArpnZQ7UZKEpPqtfc+FAHIepsVNWbc6B7r519rssX1TXDnqFWkw==",
+  "dgSpecHash": "kPDk30c3qZL8KyBTmQCkgAt2jJNBoyMxhDGGVhxSVqSKHWXOQxMoiRL4LIZYjtT1TqOpO12dAfrJ0JuQZxwNaQ==",
   "success": true,
-  "projectFilePath": "D:\\MyFile\\diplom\\diplom\\diplom.Android\\diplom.Android.csproj",
+  "projectFilePath": "C:\\Users\\osmin\\Desktop\\diplom\\diplom\\diplom.Android\\diplom.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\osmin\\.nuget\\packages\\anglesharp\\1.0.1\\anglesharp.1.0.1.nupkg.sha512",
     "C:\\Users\\osmin\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512",

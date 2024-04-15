@@ -2300,11 +2300,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyFile\\diplom\\diplom\\diplom.iOS\\diplom.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\osmin\\Desktop\\diplom\\diplom\\diplom.iOS\\diplom.iOS.csproj",
       "projectName": "diplom.iOS",
-      "projectPath": "D:\\MyFile\\diplom\\diplom\\diplom.iOS\\diplom.iOS.csproj",
+      "projectPath": "C:\\Users\\osmin\\Desktop\\diplom\\diplom\\diplom.iOS\\diplom.iOS.csproj",
       "packagesPath": "C:\\Users\\osmin\\.nuget\\packages\\",
-      "outputPath": "D:\\MyFile\\diplom\\diplom\\diplom.iOS\\obj\\",
+      "outputPath": "C:\\Users\\osmin\\Desktop\\diplom\\diplom\\diplom.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2325,8 +2325,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\MyFile\\diplom\\diplom\\diplom\\diplom.csproj": {
-              "projectPath": "D:\\MyFile\\diplom\\diplom\\diplom\\diplom.csproj"
+            "C:\\Users\\osmin\\Desktop\\diplom\\diplom\\diplom\\diplom.csproj": {
+              "projectPath": "C:\\Users\\osmin\\Desktop\\diplom\\diplom\\diplom\\diplom.csproj"
             }
           }
         }

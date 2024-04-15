@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XBSos0LKg2wooMzXvCavIlEm4IgNOu21l+pyZ0EBnUVWINIR7V9CRJyKLeE31IWkPZbWm/alhjVYdvM8qa2Glg==",
+  "dgSpecHash": "l6zoSs6Fqvc0PQ/ykmutFuqM3ukl0Aju0pk6B4O9f0lcusx5X9ql3ntR+Zis11Bj/FKH3e9aZSElVbmU38J88g==",
   "success": true,
-  "projectFilePath": "D:\\MyFile\\diplom\\diplom\\diplom\\diplom.csproj",
+  "projectFilePath": "C:\\Users\\osmin\\Desktop\\diplom\\diplom\\diplom\\diplom.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\osmin\\.nuget\\packages\\anglesharp\\1.0.1\\anglesharp.1.0.1.nupkg.sha512",
     "C:\\Users\\osmin\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512",

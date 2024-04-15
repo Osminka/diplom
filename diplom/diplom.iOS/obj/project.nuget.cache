@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6o4t9JRuBbHzxrKW6beAqi8FJXc2bs0GmWDg6hFrAyTOIUPOKOikkIJ38xylLXn9JGLMAyEJ94Cjl3vaGHL93A==",
+  "dgSpecHash": "9W5jI3/+5QMlsoAz38cKjT2BaQzUMxUUpW9TGV++0yiF1LyGZkQKcSgbIczN/TpJN5n103Cjs25mVfJx16HdbQ==",
   "success": true,
-  "projectFilePath": "D:\\MyFile\\diplom\\diplom\\diplom.iOS\\diplom.iOS.csproj",
+  "projectFilePath": "C:\\Users\\osmin\\Desktop\\diplom\\diplom\\diplom.iOS\\diplom.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\osmin\\.nuget\\packages\\anglesharp\\1.0.1\\anglesharp.1.0.1.nupkg.sha512",
     "C:\\Users\\osmin\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512",
